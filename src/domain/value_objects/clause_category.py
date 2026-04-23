@@ -1,0 +1,23 @@
+from __future__ import annotations
+
+from enum import StrEnum
+
+
+class ClauseCategory(StrEnum):
+    """Clause categories used in clause library and playbooks."""
+
+    LIABILITY = "LIABILITY"
+    INDEMNIFICATION = "INDEMNIFICATION"
+    TERMINATION = "TERMINATION"
+    CONFIDENTIALITY = "CONFIDENTIALITY"
+    IP_OWNERSHIP = "IP_OWNERSHIP"
+    FORCE_MAJEURE = "FORCE_MAJEURE"
+    GOVERNING_LAW = "GOVERNING_LAW"
+    DISPUTE_RESOLUTION = "DISPUTE_RESOLUTION"
+    PAYMENT_TERMS = "PAYMENT_TERMS"
+    WARRANTY = "WARRANTY"
+    NON_COMPETE = "NON_COMPETE"
+    DATA_PROTECTION = "DATA_PROTECTION"
+    ASSIGNMENT = "ASSIGNMENT"
+    PENALTY = "PENALTY"
+    OTHER = "OTHER"
