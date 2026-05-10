@@ -1,0 +1,13 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: "contractforge-api"
+    metrics_path: /api/v1/health/metrics
+    static_configs:
+      - targets: ["api:8100"]
+
+  - job_name: "celery-flower"
+    static_configs:
+      - targets: ["flower:5555"]
