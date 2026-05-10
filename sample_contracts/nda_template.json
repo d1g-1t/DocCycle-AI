@@ -1,0 +1,39 @@
+{
+  "name": "Standard Mutual NDA",
+  "version": "1.0",
+  "description": "Mutual Non-Disclosure Agreement for commercial discussions",
+  "variables": [
+    {"name": "party_a_name", "label": "Party A (Disclosing Party)", "var_type": "text", "required": true},
+    {"name": "party_b_name", "label": "Party B (Receiving Party)", "var_type": "text", "required": true},
+    {"name": "effective_date", "label": "Effective Date", "var_type": "date", "required": true},
+    {"name": "term_years", "label": "Term (years)", "var_type": "number", "required": true, "default_value": "2"},
+    {"name": "governing_law", "label": "Governing Law", "var_type": "select", "required": true, "options": ["Russian Federation", "England & Wales", "State of Delaware"]}
+  ],
+  "sections": [
+    {
+      "title": "Preamble",
+      "body": "This Mutual Non-Disclosure Agreement (\"Agreement\") is entered into as of {{ effective_date }} by and between {{ party_a_name }} (\"Party A\") and {{ party_b_name }} (\"Party B\").",
+      "order": 1
+    },
+    {
+      "title": "Definition of Confidential Information",
+      "body": "\"Confidential Information\" means any non-public technical, business, financial, legal, or other information disclosed by either party to the other, whether in written, oral, electronic, or visual form, that is designated as confidential or that a reasonable person would understand to be confidential.",
+      "order": 2
+    },
+    {
+      "title": "Obligations of Receiving Party",
+      "body": "The Receiving Party shall: (a) hold Confidential Information in strict confidence; (b) not disclose it to any third party without prior written consent; (c) use it solely for the purpose of evaluating a potential business relationship; (d) protect it using no less than reasonable care; (e) promptly notify the Disclosing Party of any unauthorized use or disclosure.",
+      "order": 3
+    },
+    {
+      "title": "Term and Termination",
+      "body": "This Agreement shall remain in effect for {{ term_years }} year(s) from the Effective Date. Either party may terminate this Agreement upon 30 days' written notice. The confidentiality obligations shall survive termination for a period of 3 years.",
+      "order": 4
+    },
+    {
+      "title": "Governing Law",
+      "body": "This Agreement shall be governed by and construed in accordance with the laws of {{ governing_law }}, without regard to its conflict of laws principles.",
+      "order": 5
+    }
+  ]
+}

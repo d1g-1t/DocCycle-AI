@@ -1,0 +1,61 @@
+{
+  "template_name": "Договор возмездного оказания услуг",
+  "template_type": "service_agreement",
+  "jurisdiction": "RU",
+  "language": "ru",
+  "clauses": [
+    {
+      "id": "subject",
+      "title": "1. Предмет договора",
+      "body": "Исполнитель ({{ contractor_name }}, ИНН: {{ contractor_inn }}) обязуется оказать Заказчику ({{ client_name }}, ИНН: {{ client_inn }}) следующие услуги: {{ service_description }}. Результаты оказания услуг подтверждаются актом приёма-передачи."
+    },
+    {
+      "id": "price",
+      "title": "2. Стоимость услуг и порядок расчётов",
+      "body": "Общая стоимость услуг составляет {{ total_amount }} {{ currency }}, в том числе НДС {{ vat_rate }}%. Оплата производится в течение {{ payment_days }} банковских дней с момента подписания акта приёма-передачи."
+    },
+    {
+      "id": "term",
+      "title": "3. Сроки оказания услуг",
+      "body": "Исполнитель обязуется оказать услуги в срок до {{ deadline }}. При задержке более {{ penalty_threshold_days }} дней Исполнитель уплачивает неустойку в размере {{ penalty_rate }}% от стоимости услуг за каждый день просрочки."
+    },
+    {
+      "id": "ip",
+      "title": "4. Интеллектуальная собственность",
+      "body": "Результаты интеллектуальной деятельности, созданные при оказании услуг, принадлежат {{ ip_owner }} с момента подписания акта."
+    },
+    {
+      "id": "confidentiality",
+      "title": "5. Конфиденциальность",
+      "body": "Стороны обязуются не разглашать условия настоящего Договора и информацию, полученную в ходе его исполнения, в течение {{ confidentiality_years }} лет."
+    },
+    {
+      "id": "liability",
+      "title": "6. Ответственность",
+      "body": "Совокупная ответственность каждой из строн по настоящему Договору ограничена суммой {{ liability_cap }} {{ currency }}."
+    },
+    {
+      "id": "governing_law",
+      "title": "7. Применимое право и разрешение споров",
+      "body": "Договор регулируется законодательством Российской Федерации. Споры рассматриваются в Арбитражном суде {{ arbitration_city }}."
+    }
+  ],
+  "variables": [
+    {"name": "contractor_name", "label": "Наименование Исполнителя", "type": "string", "required": true},
+    {"name": "contractor_inn", "label": "ИНН Исполнителя", "type": "string", "required": true},
+    {"name": "client_name", "label": "Наименование Заказчика", "type": "string", "required": true},
+    {"name": "client_inn", "label": "ИНН Заказчика", "type": "string", "required": true},
+    {"name": "service_description", "label": "Описание услуг", "type": "text", "required": true},
+    {"name": "total_amount", "label": "Сумма", "type": "number", "required": true},
+    {"name": "currency", "label": "Валюта", "type": "string", "default": "RUB"},
+    {"name": "vat_rate", "label": "Ставка НДС (%)", "type": "number", "default": 20},
+    {"name": "payment_days", "label": "Срок оплаты (дней)", "type": "integer", "default": 10},
+    {"name": "deadline", "label": "Срок оказания услуг", "type": "date", "required": true},
+    {"name": "penalty_threshold_days", "label": "Порог неустойки (дней)", "type": "integer", "default": 5},
+    {"name": "penalty_rate", "label": "Ставка неустойки (%/день)", "type": "number", "default": 0.1},
+    {"name": "ip_owner", "label": "Правообладатель IP", "type": "string", "default": "Заказчику"},
+    {"name": "confidentiality_years", "label": "Срок конфиденциальности (лет)", "type": "integer", "default": 3},
+    {"name": "liability_cap", "label": "Ограничение ответственности", "type": "number"},
+    {"name": "arbitration_city", "label": "Город арбитража", "type": "string", "default": "г. Москва"}
+  ]
+}

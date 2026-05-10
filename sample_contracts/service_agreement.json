@@ -1,0 +1,36 @@
+{
+  "name": "Standard Service Agreement",
+  "version": "1.0",
+  "description": "General-purpose service agreement for professional services",
+  "variables": [
+    {"name": "client_name", "label": "Client Name", "var_type": "text", "required": true},
+    {"name": "provider_name", "label": "Service Provider Name", "var_type": "text", "required": true},
+    {"name": "service_description", "label": "Description of Services", "var_type": "text", "required": true},
+    {"name": "contract_amount", "label": "Contract Amount (RUB)", "var_type": "currency", "required": true},
+    {"name": "start_date", "label": "Start Date", "var_type": "date", "required": true},
+    {"name": "end_date", "label": "End Date", "var_type": "date", "required": true},
+    {"name": "payment_terms", "label": "Payment Terms", "var_type": "select", "options": ["Net 15", "Net 30", "Net 60", "Milestone-based"], "required": true}
+  ],
+  "sections": [
+    {
+      "title": "Scope of Services",
+      "body": "{{ provider_name }} agrees to provide the following services to {{ client_name }}: {{ service_description }}. The services shall commence on {{ start_date }} and conclude on {{ end_date }}.",
+      "order": 1
+    },
+    {
+      "title": "Compensation",
+      "body": "{{ client_name }} shall pay {{ provider_name }} the total amount of {{ contract_amount }} RUB for the services performed under this Agreement. Payment terms: {{ payment_terms }}.",
+      "order": 2
+    },
+    {
+      "title": "Liability Limitation",
+      "body": "Neither party shall be liable to the other for any indirect, incidental, special, consequential, or punitive damages. The total aggregate liability of either party shall not exceed the total fees paid or payable under this Agreement.",
+      "order": 3
+    },
+    {
+      "title": "Termination",
+      "body": "Either party may terminate this Agreement with 30 days written notice. In case of material breach, the non-breaching party may terminate immediately upon written notice.",
+      "order": 4
+    }
+  ]
+}
